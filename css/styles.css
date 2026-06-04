@@ -94,6 +94,27 @@ nav{display:flex;align-items:center;justify-content:space-between;height:72px}
 .menu-btn{display:none;background:none;border:1px solid var(--line-strong);color:var(--txt);
   width:42px;height:42px;border-radius:10px;cursor:pointer;font-size:18px}
 
+/* Seletor de idioma */
+.lang-switch{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:13px;font-weight:500;
+  padding:9px 12px;border-radius:10px;border:1px solid var(--line-strong);color:var(--txt);
+  background:rgba(255,255,255,.02);cursor:pointer;transition:border-color .2s,color .2s}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+.lang-btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round}
+.lang-btn .chev{width:12px;height:12px;transition:transform .25s}
+.lang-switch.open .lang-btn .chev{transform:rotate(180deg)}
+.lang-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:168px;display:none;flex-direction:column;gap:2px;
+  background:rgba(14,11,28,.97);border:1px solid var(--line);border-radius:12px;padding:6px;
+  backdrop-filter:blur(12px);box-shadow:0 14px 36px -12px rgba(0,0,0,.7);z-index:80}
+.lang-switch.open .lang-menu{display:flex}
+.lang-menu button{display:flex;align-items:center;gap:9px;width:100%;text-align:left;background:none;border:none;
+  color:var(--muted);font-family:var(--body);font-size:14px;font-weight:500;padding:10px 12px;border-radius:8px;
+  cursor:pointer;transition:background .15s,color .15s}
+.lang-menu button:hover{background:rgba(184,116,255,.12);color:var(--txt)}
+.lang-menu button.active{color:var(--accent);background:rgba(184,116,255,.1)}
+.lang-menu button span{font-size:15px;line-height:1}
+
 .mobile-menu{display:none;flex-direction:column;gap:6px;padding:16px 24px 26px;border-bottom:1px solid var(--line);background:rgba(7,6,15,.96);backdrop-filter:blur(12px)}
 .mobile-menu.open{display:flex}
 .mobile-menu a{padding:12px 0;color:var(--muted);border-bottom:1px solid var(--line);font-weight:500}
@@ -113,7 +134,7 @@ section{position:relative;z-index:2}
   background:linear-gradient(100deg,var(--bg) 0%,rgba(7,6,15,.72) 26%,rgba(7,6,15,.12) 56%,transparent 74%)}
 .hero-inner{position:relative;z-index:3;max-width:880px}
 .hero h1{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height:1.02;
-  font-size:clamp(40px,7vw,76px);margin:22px 0 24px}
+  font-size:clamp(32px,7vw,76px);margin:22px 0 24px}
 .hero h1 .hl{background:linear-gradient(110deg,var(--accent),var(--accent-2));
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero p.lead{font-size:clamp(17px,2.2vw,21px);color:var(--muted);max-width:580px;margin-bottom:34px}
@@ -249,6 +270,20 @@ footer{border-top:1px solid var(--line);padding:50px 0 40px;margin-top:90px}
   .hero{padding:70px 0 50px}
   .cta-box{padding:44px 26px}
   .hero-stats{gap:26px}
+  /* Botões ocupam a largura toda: mais fáceis de tocar */
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{width:100%;justify-content:center}
+  .cta-box .hero-cta{align-items:center}
+  /* Bloco de "código" não encosta nas bordas */
+  .why-visual{font-size:12px;padding:24px 20px}
+}
+@media(max-width:380px){
+  .wrap{padding:0 18px}
+  .logo{font-size:17px}
+  .lang-btn{padding:8px 9px;font-size:12px}
+  .hero-stats{gap:20px}
+  .stat .n{font-size:26px}
+  .cta-box{padding:38px 20px}
 }
 
 /* Respeita quem prefere menos movimento (acessibilidade + bateria) */

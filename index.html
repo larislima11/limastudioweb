@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lima Studio Web — Sites que atraem clientes</title>
-<meta name="description" content="Sites modernos, rápidos e fáceis de achar no Google. Lima Studio Web — desenvolvimento web sob medida para o seu negócio crescer.">
+<title>Lima Studio Web · Sites que atraem clientes</title>
+<meta name="description" content="Sites modernos, rápidos e fáceis de achar no Google. Lima Studio Web: desenvolvimento web sob medida para o seu negócio crescer.">
 
 <!-- TODO: troque pelo seu domínio real quando publicar -->
 <link rel="canonical" href="https://limastudioweb.com.br/">
@@ -17,23 +17,25 @@
 <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lima Studio Web">
-<meta property="og:title" content="Lima Studio Web — Sites que atraem clientes">
+<meta property="og:title" content="Lima Studio Web · Sites que atraem clientes">
 <meta property="og:description" content="Sites modernos, rápidos e fáceis de achar no Google. Desenvolvimento web sob medida para o seu negócio crescer.">
 <meta property="og:url" content="https://limastudioweb.com.br/">
 <meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
 <!-- TODO: gere uma imagem 1200x630 (capa do site) e suba como /og.jpg -->
 <meta property="og:image" content="https://limastudioweb.com.br/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Lima Studio Web — desenvolvimento web sob medida">
+<meta property="og:image:alt" content="Lima Studio Web · desenvolvimento web sob medida">
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lima Studio Web — Sites que atraem clientes">
+<meta name="twitter:title" content="Lima Studio Web · Sites que atraem clientes">
 <meta name="twitter:description" content="Sites modernos, rápidos e fáceis de achar no Google. Desenvolvimento web sob medida para o seu negócio crescer.">
 <meta name="twitter:image" content="https://limastudioweb.com.br/og.jpg">
 
-<!-- Dados estruturados — ajuda o Google a entender o negócio -->
+<!-- Dados estruturados: ajuda o Google a entender o negócio -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,7 +46,7 @@
   "email": "larissaalmeidalima9@gmail.com",
   "telephone": "+55-15-98160-5571",
   "areaServed": "BR",
-  "knowsLanguage": "pt-BR",
+  "knowsLanguage": ["pt-BR", "en", "es"],
   "founder": { "@type": "Person", "name": "Larissa Almeida Lima" },
   "sameAs": [
     "https://www.instagram.com/limastudio.web/",
@@ -72,43 +74,56 @@
     <nav>
       <a href="#" class="logo"><span class="orb"></span>Lima&nbsp;Studio&nbsp;Web</a>
       <div class="nav-links">
-        <a href="#servicos">Serviços</a>
-        <a href="#diferenciais">Diferenciais</a>
-        <a href="#processo">Processo</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#sobre">Sobre</a>
+        <a href="#servicos" data-i18n="nav_serv">Serviços</a>
+        <a href="#diferenciais" data-i18n="nav_dif">Diferenciais</a>
+        <a href="#processo" data-i18n="nav_proc">Processo</a>
+        <a href="#projetos" data-i18n="nav_proj">Projetos</a>
+        <a href="#sobre" data-i18n="nav_sobre">Sobre</a>
       </div>
       <div class="nav-cta">
-        <a href="#contato" class="btn btn-ghost">Falar comigo</a>
+        <!-- Seletor de idioma -->
+        <div class="lang-switch" id="langSwitch">
+          <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Idioma / Language / Idioma">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.7 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.7-3.5-9s1-6.5 3.5-9Z"/></svg>
+            <span id="langCur">PT</span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-menu" id="langMenu" role="menu">
+            <button type="button" data-lang="pt" role="menuitem"><span>🇧🇷</span> Português</button>
+            <button type="button" data-lang="en" role="menuitem"><span>🇺🇸</span> English</button>
+            <button type="button" data-lang="es" role="menuitem"><span>🇪🇸</span> Español</button>
+          </div>
+        </div>
+        <a href="#contato" class="btn btn-ghost" data-i18n="nav_cta">Falar comigo</a>
         <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
       </div>
     </nav>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#servicos">Serviços</a>
-    <a href="#diferenciais">Diferenciais</a>
-    <a href="#processo">Processo</a>
-    <a href="#projetos">Projetos</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#contato">Falar comigo</a>
+    <a href="#servicos" data-i18n="nav_serv">Serviços</a>
+    <a href="#diferenciais" data-i18n="nav_dif">Diferenciais</a>
+    <a href="#processo" data-i18n="nav_proc">Processo</a>
+    <a href="#projetos" data-i18n="nav_proj">Projetos</a>
+    <a href="#sobre" data-i18n="nav_sobre">Sobre</a>
+    <a href="#contato" data-i18n="nav_cta">Falar comigo</a>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="wrap hero-inner">
-    <span class="eyebrow reveal">Lima Studio Web · Desenvolvimento web sob medida</span>
-    <h1 class="reveal">Seu próximo cliente está te procurando no Google. <span class="hl">Faça ele te encontrar.</span></h1>
-    <p class="lead reveal">Crio sites modernos, rápidos e fáceis de achar — feitos sob medida para o seu negócio atrair mais clientes e passar credibilidade já no primeiro clique.</p>
+    <span class="eyebrow reveal" data-i18n="hero_eyebrow">Lima Studio Web · Desenvolvimento web sob medida</span>
+    <h1 class="reveal" data-i18n-html="hero_h1">Seu próximo cliente está te procurando no Google. <span class="hl">Faça ele te encontrar.</span></h1>
+    <p class="lead reveal" data-i18n="hero_lead">Crio sites modernos, rápidos e fáceis de achar, feitos sob medida para o seu negócio atrair mais clientes e passar credibilidade já no primeiro clique.</p>
     <div class="hero-cta reveal">
-      <a href="https://wa.me/5515981605571?text=Oi%20Larissa!%20Vi%20o%20site%20da%20Lima%20Studio%20Web%20e%20quero%20um%20or%C3%A7amento." class="btn btn-primary" target="_blank" rel="noopener">Quero meu site →</a>
-      <a href="#projetos" class="btn btn-ghost">Ver projetos</a>
+      <a href="https://wa.me/5515981605571?text=Oi%20Larissa!%20Vi%20o%20site%20da%20Lima%20Studio%20Web%20e%20quero%20um%20or%C3%A7amento." class="btn btn-primary" target="_blank" rel="noopener" data-i18n="hero_cta1">Quero meu site →</a>
+      <a href="#projetos" class="btn btn-ghost" data-i18n="hero_cta2">Ver projetos</a>
     </div>
     <div class="hero-stats reveal">
-      <div class="stat"><div class="n accent">100%</div><div class="l">sob medida</div></div>
-      <div class="stat"><div class="n">Mobile</div><div class="l">perfeito no celular</div></div>
-      <div class="stat"><div class="n">Google</div><div class="l">otimizado pra ser achado</div></div>
-      <div class="stat"><div class="n">Direto</div><div class="l">você fala comigo</div></div>
+      <div class="stat"><div class="n accent" data-i18n="stat1n">100%</div><div class="l" data-i18n="stat1l">sob medida</div></div>
+      <div class="stat"><div class="n" data-i18n="stat2n">Mobile</div><div class="l" data-i18n="stat2l">perfeito no celular</div></div>
+      <div class="stat"><div class="n" data-i18n="stat3n">Google</div><div class="l" data-i18n="stat3l">otimizado pra ser achado</div></div>
+      <div class="stat"><div class="n" data-i18n="stat4n">Direto</div><div class="l" data-i18n="stat4l">você fala comigo</div></div>
     </div>
   </div>
 </section>
@@ -117,17 +132,17 @@
 <section class="sec" id="servicos">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">O que fazemos</span>
-      <h2>Tudo para o seu negócio brilhar online</h2>
-      <p>Da primeira ideia ao site no ar — cuido de cada detalhe para você só se preocupar em atender os novos clientes.</p>
+      <span class="eyebrow" data-i18n="serv_eyebrow">O que fazemos</span>
+      <h2 data-i18n="serv_h2">Tudo para o seu negócio brilhar online</h2>
+      <p data-i18n="serv_p">Da primeira ideia ao site no ar, cuido de cada detalhe para você só se preocupar em atender os novos clientes.</p>
     </div>
     <div class="grid-3">
-      <div class="card reveal"><div class="ico">🌐</div><h3>Sites institucionais</h3><p>Sua vitrine digital aberta 24h, passando confiança e aparecendo quando procuram pelo seu serviço.</p></div>
-      <div class="card reveal"><div class="ico">🛒</div><h3>Lojas online</h3><p>Venda até dormindo: catálogo, carrinho e pagamento integrado, tudo funcionando sozinho.</p></div>
-      <div class="card reveal"><div class="ico">🚀</div><h3>Landing pages</h3><p>Páginas afiadas para anúncios e lançamentos — feitas para uma coisa só: converter.</p></div>
-      <div class="card reveal"><div class="ico">⚙️</div><h3>Sistemas sob medida</h3><p>Agendamentos, painéis e automações que tiram o trabalho repetitivo das suas costas.</p></div>
-      <div class="card reveal"><div class="ico">📊</div><h3>Dados &amp; automação</h3><p>Dashboards e integrações que mostram, em números, o que está dando certo no seu negócio.</p></div>
-      <div class="card reveal"><div class="ico">🔧</div><h3>Manutenção &amp; suporte</h3><p>Site sempre no ar, atualizado e seguro — com alguém de verdade pra te responder.</p></div>
+      <div class="card reveal"><div class="ico">🌐</div><h3 data-i18n="c1h">Sites institucionais</h3><p data-i18n="c1p">Sua vitrine digital aberta 24h, passando confiança e aparecendo quando procuram pelo seu serviço.</p></div>
+      <div class="card reveal"><div class="ico">🛒</div><h3 data-i18n="c2h">Lojas online</h3><p data-i18n="c2p">Venda até dormindo: catálogo, carrinho e pagamento integrado, tudo funcionando sozinho.</p></div>
+      <div class="card reveal"><div class="ico">🚀</div><h3 data-i18n="c3h">Landing pages</h3><p data-i18n="c3p">Páginas afiadas para anúncios e lançamentos, feitas para uma coisa só: converter.</p></div>
+      <div class="card reveal"><div class="ico">⚙️</div><h3 data-i18n="c4h">Sistemas sob medida</h3><p data-i18n="c4p">Agendamentos, painéis e automações que tiram o trabalho repetitivo das suas costas.</p></div>
+      <div class="card reveal"><div class="ico">📊</div><h3 data-i18n="c5h">Dados &amp; automação</h3><p data-i18n="c5p">Dashboards e integrações que mostram, em números, o que está dando certo no seu negócio.</p></div>
+      <div class="card reveal"><div class="ico">🔧</div><h3 data-i18n="c6h">Manutenção &amp; suporte</h3><p data-i18n="c6p">Site sempre no ar, atualizado e seguro, com alguém de verdade pra te responder.</p></div>
     </div>
   </div>
 </section>
@@ -137,29 +152,29 @@
   <div class="wrap sec">
     <div class="why-grid">
       <div class="reveal">
-        <span class="eyebrow">Por que a Lima Studio Web</span>
+        <span class="eyebrow" data-i18n="why_eyebrow">Por que a Lima Studio Web</span>
         <div class="sec-head" style="margin:16px 0 32px">
-          <h2 style="font-size:clamp(26px,4vw,38px)">Tecnologia de gente grande, atenção de quem se importa</h2>
+          <h2 style="font-size:clamp(26px,4vw,38px)" data-i18n="why_h2">Tecnologia de gente grande, atenção de quem se importa</h2>
         </div>
         <div class="why-list">
-          <div class="why-item"><div class="chk">✓</div><div><h4>Atendimento direto e humano</h4><p>Você fala comigo, não com um robô. Entendo o seu negócio antes de escrever a primeira linha de código.</p></div></div>
-          <div class="why-item"><div class="chk">✓</div><div><h4>Feito para ser rápido</h4><p>Sites leves que carregam num piscar de olhos. Cliente não espera — e o Google também não.</p></div></div>
-          <div class="why-item"><div class="chk">✓</div><div><h4>Pensado em resultado</h4><p>Sou desenvolvedora e engenheira de dados: seu site nasce medindo o que importa para crescer.</p></div></div>
-          <div class="why-item"><div class="chk">✓</div><div><h4>Sem letras miúdas</h4><p>Prazo, escopo e preço combinados desde o começo. Sem surpresa lá na frente.</p></div></div>
+          <div class="why-item"><div class="chk">✓</div><div><h4 data-i18n="wi1h">Atendimento direto e humano</h4><p data-i18n="wi1p">Você fala comigo, não com um robô. Entendo o seu negócio antes de escrever a primeira linha de código.</p></div></div>
+          <div class="why-item"><div class="chk">✓</div><div><h4 data-i18n="wi2h">Feito para ser rápido</h4><p data-i18n="wi2p">Sites leves que carregam num piscar de olhos. Cliente não espera, e o Google também não.</p></div></div>
+          <div class="why-item"><div class="chk">✓</div><div><h4 data-i18n="wi3h">Pensado em resultado</h4><p data-i18n="wi3p">Sou desenvolvedora e engenheira de dados: seu site nasce medindo o que importa para crescer.</p></div></div>
+          <div class="why-item"><div class="chk">✓</div><div><h4 data-i18n="wi4h">Sem letras miúdas</h4><p data-i18n="wi4p">Prazo, escopo e preço combinados desde o começo. Sem surpresa lá na frente.</p></div></div>
         </div>
       </div>
       <div class="why-visual reveal">
         <div class="bar"><span></span><span></span><span></span></div>
-        <div><span class="c-com">// o que você leva pra casa</span></div>
+        <div><span class="c-com" data-i18n="code_com1">// o que você leva pra casa</span></div>
         <div><span class="c-key">const</span> seuSite = {</div>
-        <div>&nbsp;&nbsp;velocidade:<span class="c-str"> 'relâmpago'</span>,</div>
-        <div>&nbsp;&nbsp;design:<span class="c-str"> 'sob medida'</span>,</div>
+        <div>&nbsp;&nbsp;velocidade:<span class="c-str" data-i18n="code_v1"> 'relâmpago'</span>,</div>
+        <div>&nbsp;&nbsp;design:<span class="c-str" data-i18n="code_v2"> 'sob medida'</span>,</div>
         <div>&nbsp;&nbsp;celular:<span class="c-key"> true</span>,</div>
         <div>&nbsp;&nbsp;google:<span class="c-key"> true</span>,</div>
-        <div>&nbsp;&nbsp;suporte:<span class="c-str"> 'humano'</span>,</div>
-        <div>&nbsp;&nbsp;objetivo:<span class="c-str"> 'mais clientes'</span></div>
+        <div>&nbsp;&nbsp;suporte:<span class="c-str" data-i18n="code_v3"> 'humano'</span>,</div>
+        <div>&nbsp;&nbsp;objetivo:<span class="c-str" data-i18n="code_v4"> 'mais clientes'</span></div>
         <div>};</div>
-        <div style="margin-top:14px"><span class="c-com">// vamos rodar? 👇</span></div>
+        <div style="margin-top:14px"><span class="c-com" data-i18n="code_com2">// vamos rodar? 👇</span></div>
       </div>
     </div>
   </div>
@@ -169,15 +184,15 @@
 <section class="sec" id="processo">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Como funciona</span>
-      <h2>Do papo ao site no ar em 4 passos</h2>
-      <p>Simples, transparente e sem complicação técnica do seu lado.</p>
+      <span class="eyebrow" data-i18n="proc_eyebrow">Como funciona</span>
+      <h2 data-i18n="proc_h2">Do papo ao site no ar em 4 passos</h2>
+      <p data-i18n="proc_p">Simples, transparente e sem complicação técnica do seu lado.</p>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="num">01</div><h4>Conversa</h4><p>Entendo seu negócio, seu público e onde você quer chegar.</p></div>
-      <div class="step reveal"><div class="num">02</div><h4>Proposta</h4><p>Você recebe escopo, prazo e valor — tudo na mesa, sem enrolação.</p></div>
-      <div class="step reveal"><div class="num">03</div><h4>Desenvolvimento</h4><p>Coloco a mão na massa e te mostro o progresso a cada etapa.</p></div>
-      <div class="step reveal"><div class="num">04</div><h4>No ar &amp; suporte</h4><p>Site publicado, com treinamento pra você tocar sozinha e suporte sempre que precisar.</p></div>
+      <div class="step reveal"><div class="num">01</div><h4 data-i18n="s1h">Conversa</h4><p data-i18n="s1p">Entendo seu negócio, seu público e onde você quer chegar.</p></div>
+      <div class="step reveal"><div class="num">02</div><h4 data-i18n="s2h">Proposta</h4><p data-i18n="s2p">Você recebe escopo, prazo e valor, tudo na mesa, sem enrolação.</p></div>
+      <div class="step reveal"><div class="num">03</div><h4 data-i18n="s3h">Desenvolvimento</h4><p data-i18n="s3p">Coloco a mão na massa e te mostro o progresso a cada etapa.</p></div>
+      <div class="step reveal"><div class="num">04</div><h4 data-i18n="s4h">No ar &amp; suporte</h4><p data-i18n="s4p">Site publicado, com treinamento pra você tocar sozinha e suporte sempre que precisar.</p></div>
     </div>
   </div>
 </section>
@@ -186,11 +201,11 @@
 <section class="sec" id="projetos">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Projetos</span>
-      <h2>Trabalhos recentes</h2>
+      <span class="eyebrow" data-i18n="port_eyebrow">Projetos</span>
+      <h2 data-i18n="port_h2">Trabalhos recentes</h2>
     </div>
     <div class="work-grid">
-      <a class="work reveal" href="https://www.coreag.com.br/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit"><div class="thumb"><img src="img/coreag.png" alt="Site institucional da CORE — agência de branding e marketing digital" loading="lazy" onerror="this.style.display='none'"><span>coreag.com.br ↗</span></div><div class="meta"><span class="tag">Site institucional</span><h4>CORE — Agência de Branding</h4><p>Site institucional para agência de branding e marketing digital: identidade marcante, cases e serviços num layout minimalista e responsivo. No ar em coreag.com.br.</p></div></a>
+      <a class="work reveal" href="https://www.coreag.com.br/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit"><div class="thumb"><img src="img/coreag.png" alt="Site institucional da CORE, agência de branding e marketing digital" loading="lazy" onerror="this.style.display='none'"><span>coreag.com.br ↗</span></div><div class="meta"><span class="tag" data-i18n="work_tag">Site institucional</span><h4 data-i18n="work_h4">CORE · Agência de Branding</h4><p data-i18n="work_p">Site institucional para agência de branding e marketing digital: identidade marcante, cases e serviços num layout minimalista e responsivo. No ar em coreag.com.br.</p></div></a>
     </div>
   </div>
 </section>
@@ -203,12 +218,12 @@
         <img src="img/larissa.jpg" alt="Larissa, fundadora da Lima Studio Web, desenvolvendo no laptop" loading="lazy">
       </div>
       <div class="about-text reveal">
-        <span class="eyebrow">Sobre mim</span>
-        <h2>Oi, eu sou a Larissa 👋</h2>
-        <p>Sou desenvolvedora fullstack e engenheira de dados. Criei a Lima Studio Web com uma ideia simples: todo negócio merece um site profissional, sem pagar uma fortuna nem se perder em termos técnicos.</p>
-        <p>Cada projeto que entra aqui recebe atenção total — do primeiro papo até o site no ar trazendo clientes. Bonito por fora, sólido por dentro.</p>
+        <span class="eyebrow" data-i18n="about_eyebrow">Sobre mim</span>
+        <h2 data-i18n="about_h2">Oi, eu sou a Larissa 👋</h2>
+        <p data-i18n="about_p1">Sou desenvolvedora fullstack e engenheira de dados, formada em Análise e Desenvolvimento de Sistemas e pós-graduada (MBA USP/Esalq) em Data Science e Analytics. Criei a Lima Studio Web com uma ideia simples: todo negócio merece um site profissional, sem pagar uma fortuna nem se perder em termos técnicos.</p>
+        <p data-i18n="about_p2">Cada projeto que entra aqui recebe atenção total, desde a primeira reunião até o site no ar para seus clientes. Bonito por fora, e bem estruturado por dentro.</p>
         <div class="skills">
-          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>SQL</span><span>Node.js</span><span>Banco de dados</span><span>SEO</span><span>Responsivo</span>
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>SQL</span><span>Node.js</span><span data-i18n="skill_db">Banco de dados</span><span>SEO</span><span data-i18n="skill_resp">Responsivo</span>
         </div>
       </div>
     </div>
@@ -219,15 +234,15 @@
 <section class="sec">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Dúvidas</span>
-      <h2>Perguntas frequentes</h2>
+      <span class="eyebrow" data-i18n="faq_eyebrow">Dúvidas</span>
+      <h2 data-i18n="faq_h2">Perguntas frequentes</h2>
     </div>
     <div class="faq-list">
-      <details class="faq reveal"><summary>Quanto custa um site?</summary><p>Depende do que o seu negócio precisa — não existe preço de prateleira. Por isso o primeiro orçamento é grátis: a gente conversa, eu entendo seu objetivo e te passo um valor justo e transparente, sem surpresas.</p></details>
-      <details class="faq reveal"><summary>Quanto tempo leva para ficar pronto?</summary><p>Um site institucional simples costuma levar de 1 a 3 semanas. Projetos maiores têm um cronograma combinado logo no início — você sempre sabe quando vai estar pronto.</p></details>
-      <details class="faq reveal"><summary>Eu preciso entender de tecnologia?</summary><p>Não! Eu cuido de toda a parte técnica e explico tudo em linguagem simples. Você só foca no que faz de melhor: o seu negócio.</p></details>
-      <details class="faq reveal"><summary>O site funciona no celular?</summary><p>Sempre. Todos os sites são responsivos e otimizados para celular, que é onde a maioria dos seus clientes vai te encontrar.</p></details>
-      <details class="faq reveal"><summary>E depois que o site fica pronto?</summary><p>Você não fica na mão. Ofereço suporte e planos de manutenção para manter tudo atualizado, seguro e funcionando — além de te ensinar a mexer no básico.</p></details>
+      <details class="faq reveal"><summary data-i18n="faq_q1">Quanto custa um site?</summary><p data-i18n="faq_a1">Depende do que o seu negócio precisa, não existe preço de prateleira. O orçamento é sempre gratuito, quantas vezes você precisar: a gente conversa, eu entendo seu objetivo e te passo um valor justo e transparente, sem surpresas. Você só investe quando decidir colocar o projeto pra rodar; orçar nunca é cobrado, só o desenvolvimento.</p></details>
+      <details class="faq reveal"><summary data-i18n="faq_q2">Quanto tempo leva para ficar pronto?</summary><p data-i18n="faq_a2">Um site institucional simples costuma levar de 1 a 3 semanas. Projetos maiores têm um cronograma combinado logo no início, você sempre sabe quando vai estar pronto.</p></details>
+      <details class="faq reveal"><summary data-i18n="faq_q3">Eu preciso entender de tecnologia?</summary><p data-i18n="faq_a3">Não! Eu cuido de toda a parte técnica e explico tudo em linguagem simples. Você só foca no que faz de melhor: o seu negócio.</p></details>
+      <details class="faq reveal"><summary data-i18n="faq_q4">O site funciona no celular?</summary><p data-i18n="faq_a4">Sempre. Todos os sites são responsivos e otimizados para celular, que é onde a maioria dos seus clientes vai te encontrar.</p></details>
+      <details class="faq reveal"><summary data-i18n="faq_q5">E depois que o site fica pronto?</summary><p data-i18n="faq_a5">Você não fica na mão. Ofereço suporte e planos de manutenção para manter tudo atualizado, seguro e funcionando, além de te ensinar a mexer no básico.</p></details>
     </div>
   </div>
 </section>
@@ -236,14 +251,14 @@
 <section class="sec" id="contato">
   <div class="wrap">
     <div class="cta-box reveal">
-      <h2>Bora colocar seu negócio no ar?</h2>
-      <p>Me chama no WhatsApp. O primeiro papo e o orçamento são gratuitos e sem compromisso — você não tem nada a perder.</p>
+      <h2 data-i18n="cta_h2">Bora colocar seu negócio no ar?</h2>
+      <p data-i18n="cta_p">Me chama no WhatsApp. O primeiro papo e o orçamento são gratuitos e sem compromisso, você não tem nada a perder.</p>
       <div class="hero-cta">
-        <a href="https://wa.me/5515981605571?text=Oi%20Larissa!%20Quero%20um%20or%C3%A7amento%20de%20site." class="btn btn-primary" target="_blank" rel="noopener">Falar no WhatsApp →</a>
-        <a href="mailto:larissaalmeidalima9@gmail.com" class="btn btn-ghost">Enviar e-mail</a>
+        <a href="https://wa.me/5515981605571?text=Oi%20Larissa!%20Quero%20um%20or%C3%A7amento%20de%20site." class="btn btn-primary" target="_blank" rel="noopener" data-i18n="cta_btn1">Falar no WhatsApp →</a>
+        <a href="mailto:larissaalmeidalima9@gmail.com" class="btn btn-ghost" data-i18n="cta_btn2">Enviar e-mail</a>
       </div>
       <div class="cta-social">
-        <span>Me acompanhe nas redes:</span>
+        <span data-i18n="cta_social">Me acompanhe nas redes:</span>
         <a href="https://www.instagram.com/limastudio.web/" target="_blank" rel="noopener" aria-label="Instagram da Lima Studio Web">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.5 0-4.74.07-.9.04-1.38.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.33-.28.81-.32 1.71C3.4 8.5 3.4 8.85 3.4 12s0 3.5.07 4.74c.04.9.19 1.38.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.33.13.81.28 1.71.32 1.24.07 1.59.07 4.74.07s3.5 0 4.74-.07c.9-.04 1.38-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.33.28-.81.32-1.71.07-1.24.07-1.59.07-4.74s0-3.5-.07-4.74c-.04-.9-.19-1.38-.32-1.71a2.85 2.85 0 0 0-.69-1.06 2.85 2.85 0 0 0-1.06-.69c-.33-.13-.81-.28-1.71-.32C15.5 4 15.15 4 12 4Zm0 3.06A4.94 4.94 0 1 1 7.06 12 4.94 4.94 0 0 1 12 7.06Zm0 8.14A3.2 3.2 0 1 0 8.8 12 3.2 3.2 0 0 0 12 15.2Zm5.14-8.34a1.15 1.15 0 1 1-1.15-1.15 1.15 1.15 0 0 1 1.15 1.15Z"/></svg>
           <span>@limastudio.web</span>
@@ -267,20 +282,20 @@
     <div class="foot">
       <div>
         <a href="#" class="logo"><span class="orb"></span>Lima&nbsp;Studio&nbsp;Web</a>
-        <p>Sites profissionais que colocam o seu negócio no mapa — e na frente da concorrência.</p>
+        <p data-i18n="foot_p">Sites profissionais que colocam o seu negócio no mapa, na frente da concorrência.</p>
       </div>
       <div class="foot-links">
         <div class="foot-col">
-          <h5>Navegação</h5>
-          <a href="#servicos">Serviços</a>
-          <a href="#processo">Processo</a>
-          <a href="#projetos">Projetos</a>
-          <a href="#sobre">Sobre</a>
+          <h5 data-i18n="foot_nav">Navegação</h5>
+          <a href="#servicos" data-i18n="nav_serv">Serviços</a>
+          <a href="#processo" data-i18n="nav_proc">Processo</a>
+          <a href="#projetos" data-i18n="nav_proj">Projetos</a>
+          <a href="#sobre" data-i18n="nav_sobre">Sobre</a>
         </div>
         <div class="foot-col">
-          <h5>Contato</h5>
+          <h5 data-i18n="foot_contato">Contato</h5>
           <a href="https://wa.me/5515981605571" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="mailto:larissaalmeidalima9@gmail.com">E-mail</a>
+          <a href="mailto:larissaalmeidalima9@gmail.com" data-i18n="foot_email">E-mail</a>
           <a href="https://www.instagram.com/limastudio.web/" target="_blank" rel="noopener">Instagram</a>
           <a href="https://www.linkedin.com/in/larissalima01/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/larislima11" target="_blank" rel="noopener">GitHub</a>
@@ -288,8 +303,8 @@
       </div>
     </div>
     <div class="copyright">
-      <span>© <span id="year"></span> Lima Studio Web. Todos os direitos reservados.</span>
-      <span>Feito com 💜 e código.</span>
+      <span>© <span id="year"></span> Lima Studio Web. <span data-i18n="copy_rights">Todos os direitos reservados.</span></span>
+      <span data-i18n="copy_made">Feito com ☕ + 💜 e código.</span>
     </div>
   </div>
 </footer>
@@ -298,6 +313,7 @@
   <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.737-.979 .242 .172zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
 </a>
 
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
