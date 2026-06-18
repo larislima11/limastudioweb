@@ -79,6 +79,9 @@ const I18N = {
     work_tag: "Site institucional",
     work_h4: "CORE · Agência de Branding",
     work_p: "Site institucional para agência de branding e marketing digital: identidade marcante, cases e serviços num layout minimalista e responsivo. No ar em coreag.com.br.",
+    work2_tag: "Site institucional",
+    work2_h4: "Yoshi's · Culinária Japonesa",
+    work2_p: "Site para restaurante japonês com mais de 30 anos em Sorocaba: cardápio, rodízio, reservas e delivery próprio num layout elegante e responsivo. No ar em yoshis.com.br.",
 
     about_eyebrow: "Sobre mim",
     about_h2: "Oi, eu sou a Larissa 👋",
@@ -186,6 +189,9 @@ const I18N = {
     work_tag: "Business website",
     work_h4: "CORE · Branding Agency",
     work_p: "Business website for a branding and digital marketing agency: striking identity, cases and services in a minimalist, responsive layout. Live at coreag.com.br.",
+    work2_tag: "Business website",
+    work2_h4: "Yoshi's · Japanese Cuisine",
+    work2_p: "Website for a Japanese restaurant with over 30 years in Sorocaba: menu, all-you-can-eat, reservations and its own delivery in an elegant, responsive layout. Live at yoshis.com.br.",
 
     about_eyebrow: "About me",
     about_h2: "Hi, I'm Larissa 👋",
@@ -293,6 +299,9 @@ const I18N = {
     work_tag: "Sitio institucional",
     work_h4: "CORE · Agencia de Branding",
     work_p: "Sitio institucional para una agencia de branding y marketing digital: identidad marcante, casos y servicios en un diseño minimalista y responsivo. En línea en coreag.com.br.",
+    work2_tag: "Sitio institucional",
+    work2_h4: "Yoshi's · Cocina Japonesa",
+    work2_p: "Sitio para un restaurante japonés con más de 30 años en Sorocaba: menú, tenedor libre, reservas y delivery propio en un diseño elegante y responsivo. En línea en yoshis.com.br.",
 
     about_eyebrow: "Sobre mí",
     about_h2: "Hola, soy Larissa 👋",
