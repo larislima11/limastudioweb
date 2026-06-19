@@ -21,6 +21,9 @@ let W, H, bgStars = [], gxStars = [], shooters = [], t0 = null;
 const TILT = 0.5;          // achatamento do disco (visto de cima/ângulo)
 const galaxy = { cx: 0, cy: 0, rot: 0 };
 
+// Parallax: o cursor desloca levemente as camadas (profundidade)
+let pxT = 0, pyT = 0, px = 0, py = 0;
+
 const rnd = (a, b) => a + Math.random() * (b - a);
 
 function makeStar(r, ang, maxR, core) {
@@ -71,13 +74,25 @@ function buildGalaxy() {
 }
 
 function buildBg() {
-  const n = Math.min(170, Math.floor(W * H / 11000));
+  const n = Math.min(280, Math.floor(W * H / 8200));
   bgStars = [];
-  for (let i = 0; i < n; i++) bgStars.push({
-    x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.1 + 0.3,
-    a: Math.random(), sp: rnd(0.004, 0.02),
-    tint: Math.random() < 0.2 ? 'rgba(199,160,255,' : 'rgba(255,255,255,'
-  });
+  for (let i = 0; i < n; i++) {
+    const d = rnd(0.25, 1);                 // profundidade: longe (.25) → perto (1)
+    const big = Math.random() < 0.07;       // poucas estrelas grandes/brilhantes
+    // paleta realista: maioria branca, algumas roxas/azuis e raras âmbar
+    const p = Math.random();
+    let tint;
+    if (p < 0.6) tint = '255,255,255';
+    else if (p < 0.78) tint = '201,166,255';
+    else if (p < 0.9) tint = '176,210,255';
+    else tint = '255,219,186';
+    bgStars.push({
+      bx: Math.random() * W, by: Math.random() * H,
+      r: (big ? rnd(1.3, 2.1) : rnd(0.4, 1.15)) * (0.5 + d * 0.5) + 0.2,
+      a: Math.random() * Math.PI * 2, sp: rnd(0.004, 0.022),
+      d, tint, glow: big
+    });
+  }
 }
 
 function resize() {
@@ -101,22 +116,40 @@ function draw(ts) {
   const p = Math.min(1, elapsed / BUILD);          // progresso global da construção
   ctx.clearRect(0, 0, W, H);
 
-  // estrelas de fundo (aparecem suaves)
+  // parallax suave: aproxima o alvo do cursor a cada quadro
+  px += (pxT - px) * 0.045;
+  py += (pyT - py) * 0.045;
+  const ox = px * 46, oy = py * 46;                 // deslocamento base das camadas
+
+  // estrelas de fundo (camadas com profundidade + brilho nas maiores)
   const fade = Math.min(1, elapsed * 0.6);
   for (const s of bgStars) {
     s.a += s.sp;
-    const al = (0.3 + Math.abs(Math.sin(s.a)) * 0.6) * fade;
-    ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 7); ctx.fillStyle = s.tint + al + ')'; ctx.fill();
+    const al = (0.22 + Math.abs(Math.sin(s.a)) * 0.62) * fade * (0.45 + s.d * 0.55);
+    if (al <= 0.02) continue;
+    const x = s.bx + ox * s.d, y = s.by + oy * s.d; // camadas próximas se movem mais
+    if (s.glow) {                                   // halo suave nas estrelas brilhantes
+      const g = ctx.createRadialGradient(x, y, 0, x, y, s.r * 4.5);
+      g.addColorStop(0, 'rgba(' + s.tint + ',' + (al * 0.5) + ')');
+      g.addColorStop(1, 'rgba(' + s.tint + ',0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, s.r * 4.5, 0, 7); ctx.fill();
+    }
+    ctx.fillStyle = 'rgba(' + s.tint + ',' + al + ')';
+    ctx.beginPath(); ctx.arc(x, y, s.r, 0, 7); ctx.fill();
   }
 
-  // brilho do núcleo
+  // a galáxia fica num plano mais distante (parallax menor)
+  const gOx = ox * 0.35, gOy = oy * 0.35;
+  const gcx = galaxy.cx + gOx, gcy = galaxy.cy + gOy;
+
+  // brilho do núcleo (mais sutil que antes)
   const gA = Math.min(1, p * 1.4);
   const R = Math.min(W, H) * 0.2;
-  const grd = ctx.createRadialGradient(galaxy.cx, galaxy.cy, 0, galaxy.cx, galaxy.cy, R);
-  grd.addColorStop(0, 'rgba(228,205,255,' + (0.5 * gA) + ')');
-  grd.addColorStop(0.4, 'rgba(150,110,230,' + (0.15 * gA) + ')');
+  const grd = ctx.createRadialGradient(gcx, gcy, 0, gcx, gcy, R);
+  grd.addColorStop(0, 'rgba(228,205,255,' + (0.42 * gA) + ')');
+  grd.addColorStop(0.4, 'rgba(150,110,230,' + (0.12 * gA) + ')');
   grd.addColorStop(1, 'rgba(120,80,200,0)');
-  ctx.fillStyle = grd; ctx.beginPath(); ctx.arc(galaxy.cx, galaxy.cy, R, 0, 7); ctx.fill();
+  ctx.fillStyle = grd; ctx.beginPath(); ctx.arc(gcx, gcy, R, 0, 7); ctx.fill();
 
   // rotação: rápida durante a construção, lenta depois
   galaxy.rot += (p < 1 ? 0.014 * (1 - p) + 0.0006 : 0.0006);
@@ -127,11 +160,11 @@ function draw(ts) {
     const ease = 1 - Math.pow(1 - lp, 3);            // easeOutCubic (voa do centro pra fora)
     const cr = st.r * ease;
     const a = st.ang + galaxy.rot;
-    const x = galaxy.cx + Math.cos(a) * cr;
-    const y = galaxy.cy + Math.sin(a) * cr * TILT;
+    const x = gcx + Math.cos(a) * cr;
+    const y = gcy + Math.sin(a) * cr * TILT;
     st.tw += st.twsp;
     const tw = 0.7 + Math.abs(Math.sin(st.tw)) * 0.3;
-    const alpha = st.bright * ease * tw;
+    const alpha = st.bright * ease * tw * 0.92;
     if (alpha <= 0.02) continue;
     ctx.fillStyle = 'rgba(' + st.col + ',' + alpha + ')';
     ctx.beginPath(); ctx.arc(x, y, st.size, 0, 7); ctx.fill();
@@ -156,6 +189,11 @@ function draw(ts) {
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!reduceMotion) {
   addEventListener('resize', resize);
+  // cursor controla o parallax (desktop)
+  addEventListener('pointermove', e => {
+    pxT = (e.clientX / W - 0.5) * 2;
+    pyT = (e.clientY / H - 0.5) * 2;
+  }, { passive: true });
   resize();
   requestAnimationFrame(draw);
   // começa a soltar estrelas cadentes só depois da galáxia montar
