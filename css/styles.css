@@ -241,6 +241,7 @@ section{position:relative;z-index:2}
 .about-text p{color:var(--muted);font-size:16px;margin-bottom:16px}
 .about-text .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
 .about-text .skills span{font-family:var(--mono);font-size:12.5px;padding:7px 13px;border-radius:8px;border:1px solid var(--line);color:var(--txt);background:var(--panel)}
+.about-cta{margin-top:26px}
 
 /* FAQ */
 .faq-list{display:flex;flex-direction:column;gap:12px;max-width:780px}

@@ -91,6 +91,7 @@ const I18N = {
     about_p2: "Cada projeto que entra aqui recebe atenção total, desde a primeira reunião até o site no ar para seus clientes. Bonito por fora, e bem estruturado por dentro.",
     skill_db: "Banco de dados",
     skill_resp: "Responsivo",
+    about_cta: "Ver portfólio completo ↗",
 
     faq_eyebrow: "Dúvidas",
     faq_h2: "Perguntas frequentes",
@@ -203,6 +204,7 @@ const I18N = {
     about_p2: "Every project here gets full attention, from the very first meeting to the site live for your customers. Beautiful on the outside, and well-built on the inside.",
     skill_db: "Databases",
     skill_resp: "Responsive",
+    about_cta: "See full portfolio ↗",
 
     faq_eyebrow: "FAQ",
     faq_h2: "Frequently asked questions",
@@ -315,6 +317,7 @@ const I18N = {
     about_p2: "Cada proyecto que llega aquí recibe atención total, desde la primera reunión hasta el sitio en línea para tus clientes. Bonito por fuera, y bien estructurado por dentro.",
     skill_db: "Bases de datos",
     skill_resp: "Responsivo",
+    about_cta: "Ver portafolio completo ↗",
 
     faq_eyebrow: "Dudas",
     faq_h2: "Preguntas frecuentes",
