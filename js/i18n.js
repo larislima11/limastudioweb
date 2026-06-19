@@ -17,6 +17,8 @@ const I18N = {
     nav_proc: "Processo",
     nav_proj: "Projetos",
     nav_sobre: "Sobre",
+    nav_port: "Portfólio ↗",
+    nav_portf: "Portfólio",
     nav_cta: "Falar comigo",
 
     hero_eyebrow: "Lima Studio Web · Desenvolvimento web sob medida",
@@ -127,6 +129,8 @@ const I18N = {
     nav_proc: "Process",
     nav_proj: "Projects",
     nav_sobre: "About",
+    nav_port: "Portfolio ↗",
+    nav_portf: "Portfolio",
     nav_cta: "Let's talk",
 
     hero_eyebrow: "Lima Studio Web · Custom web development",
@@ -237,6 +241,8 @@ const I18N = {
     nav_proc: "Proceso",
     nav_proj: "Proyectos",
     nav_sobre: "Sobre mí",
+    nav_port: "Portafolio ↗",
+    nav_portf: "Portafolio",
     nav_cta: "Hablemos",
 
     hero_eyebrow: "Lima Studio Web · Desarrollo web a medida",
